@@ -8,7 +8,7 @@ if (class_exists('PackageConfig')) {
 }
 
 
-require_once 'AtomFeed.php';
+require_once '../AtomFeed/AtomFeed.php';
 require_once 'Date.php';
 
 $feed = new AtomFeed();
