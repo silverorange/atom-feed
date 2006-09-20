@@ -98,8 +98,7 @@ class AtomFeedEntry extends AtomFeedNode
 				'summary', $this->summary));
 
 		if ($this->link !== null)
-			$entry->appendChild(AtomFeed::getTextNode($document,
-				'link', $this->link));
+			$entry->appendChild($this->link->getNode($document));
 
 		if ($this->published !== null)
 			$entry->appendChild(AtomFeed::getDateNode($document,
