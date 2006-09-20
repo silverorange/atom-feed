@@ -45,7 +45,9 @@ $package->addMaintainer('lead', 'nick', 'Nick Burka', 'nick@silverorange.com');
 
 $package->setPhpDep('5.1.5');
 $package->setPearinstallerDep('1.4.0');
+$package->addPackageDepWithChannel('required', 'Date', 'pear.silverorange.com', '1.4.7so1');
 $package->generateContents();
+
 
 if (isset($_GET['make']) || (isset($_SERVER['argv']) && @$_SERVER['argv'][1] == 'make')) {
 	$package->writePackageFile();

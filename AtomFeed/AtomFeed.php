@@ -4,6 +4,9 @@ require_once 'AtomFeedAuthor.php';
 require_once 'AtomFeedLink.php';
 require_once 'AtomFeedEntry.php';
 
+require_once 'PEAR/Exception.php';
+require_once 'Date.php';
+
 /**
  * A class for constructing Atom feeds
  *
@@ -22,6 +25,13 @@ class AtomFeed
 
 	// }}}
 	// {{{ public properties
+
+	/**
+	 * XML enconding
+	 *
+	 * @ var string
+	 */
+	public $xml_encoding = 'UTF-8';
 
 	/**
 	 * Title
@@ -142,7 +152,7 @@ class AtomFeed
 	public function display()
 	{
 		// create a new XML document
-		$document = new DomDocument('1.0');
+		$document = new DomDocument('1.0', $this->xml_encoding);
 
 		// create feed node
 		$feed = $document->createElement('feed');
@@ -216,6 +226,9 @@ class AtomFeed
 	{
 		if ($name_space !== null)
 			$name = $name_space.':'.$name;
+
+		if ($date === null || !$date instanceof Date)
+			throw new PEAR_Exception(sprintf('%s is not a Date', $name));
 
 		return self::getTextNode($document, 
 			$name,

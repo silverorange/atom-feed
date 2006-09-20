@@ -84,28 +84,37 @@ class AtomFeedEntry extends AtomFeedNode
 	{
 		$entry = $document->createElement('entry');
 
-		$entry->appendChild(AtomFeed::getTextNode($document, 'title', $this->title));
-		$entry->appendChild(AtomFeed::getTextNode($document, 'id', $this->id));
-		$entry->appendChild(AtomFeed::getDateNode($document, 'updated', $this->updated));
+		$entry->appendChild(AtomFeed::getTextNode($document, 'title',
+			$this->title));
+
+		$entry->appendChild(AtomFeed::getTextNode($document, 'id',
+			$this->id));
+
+		$entry->appendChild(AtomFeed::getDateNode($document, 'updated',
+			$this->updated));
 
 		if ($this->summary !== null)
-			$entry->appendChild(AtomFeed::getTextNode($document, 'summary', $this->summary));
+			$entry->appendChild(AtomFeed::getTextNode($document,
+				'summary', $this->summary));
 
 		if ($this->link !== null)
-			$entry->appendChild(AtomFeed::getTextNode($document, 'link', $this->link));
+			$entry->appendChild(AtomFeed::getTextNode($document,
+				'link', $this->link));
 
 		if ($this->published !== null)
-			$entry->appendChild(AtomFeed::getDateNode($document, 'published', $this->published));
+			$entry->appendChild(AtomFeed::getDateNode($document,
+				'published', $this->published));
 
 		if ($this->contributor !== null)
-			$entry->appendChild($this->contributor->getNode($document, 'contributor'));
+			$entry->appendChild($this->contributor->getNode($document));
 
 		// add authors
 		foreach ($this->authors as $author)
-			$entry->appendChild($author->getNode($document, 'author'));
+			$entry->appendChild($author->getNode($document));
 
 		if ($this->content !== null)
-			$entry->appendChild(AtomFeed::getTextNode($document, 'content', $this->content));
+			$entry->appendChild(AtomFeed::getTextNode($document,
+				'content', $this->content));
 
 		return $entry;
 	}
