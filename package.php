@@ -34,14 +34,15 @@ $package->setPackageType('php');
 $package->setLicense('LGPL', 'http://www.gnu.org/copyleft/lesser.html');
 
 $package->setReleaseVersion($version);
-$package->setReleaseStability('unstable');
+$package->setReleaseStability('stable');
 $package->setAPIVersion('0.0.1');
-$package->setAPIStability('unstable');
+$package->setAPIStability('beta');
 $package->setNotes($notes);
 
 $package->addIgnore('package.php');
 
 $package->addMaintainer('lead', 'nick', 'Nick Burka', 'nick@silverorange.com');
+$package->addMaintainer('lead', 'nrf', 'Nathan Fredrickson', 'nrf@silverorange.com');
 
 $package->setPhpDep('5.1.5');
 $package->setPearinstallerDep('1.4.0');
