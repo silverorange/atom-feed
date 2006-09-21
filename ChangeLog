@@ -1,0 +1,45 @@
+2006-09-21  nrf
+
+	* [r11201] atom-feed/trunk/package.php:
+	  the pear channel is lame... these changes are needed to add the
+	  package
+
+2006-09-20  nick
+
+	* [r11128] atom-feed/trunk/AtomFeed/AtomFeedEntry.php:
+	  Make entry->link a AtomFeedLink like it should be
+	* [r11118] atom-feed/trunk/AtomFeed/AtomFeed.php,
+	  atom-feed/trunk/AtomFeed/AtomFeedEntry.php,
+	  atom-feed/trunk/package.php:
+	  Bring things up to a usable state
+
+2006-09-18  nick
+
+	* [r11090] atom-feed/trunk/AtomFeed/FroogleFeed.php,
+	  atom-feed/trunk/AtomFeed/FroogleFeedEntry.php:
+	  Remove the froogle components from this package and move them to
+	  the store
+	  package
+	* [r11089] atom-feed/trunk/tests/test.php:
+	  Made it so the test works again
+
+2006-09-18  gauthierm
+
+	* [r11083] atom-feed/trunk/package.php:
+	  added package description
+	* [r11082] atom-feed/trunk/AtomFeed/test.php,
+	  atom-feed/trunk/tests, atom-feed/trunk/tests/test.php:
+	  Move test into a tests dir.
+	* [r11079] atom-feed, atom-feed/trunk, atom-feed/trunk/AtomFeed,
+	  atom-feed/trunk/AtomFeed/AtomFeed.php,
+	  atom-feed/trunk/AtomFeed/AtomFeedAuthor.php,
+	  atom-feed/trunk/AtomFeed/AtomFeedContributor.php,
+	  atom-feed/trunk/AtomFeed/AtomFeedEntry.php,
+	  atom-feed/trunk/AtomFeed/AtomFeedLink.php,
+	  atom-feed/trunk/AtomFeed/AtomFeedNode.php,
+	  atom-feed/trunk/AtomFeed/AtomFeedPerson.php,
+	  atom-feed/trunk/AtomFeed/FroogleFeed.php,
+	  atom-feed/trunk/AtomFeed/FroogleFeedEntry.php,
+	  atom-feed/trunk/AtomFeed/test.php:
+	  initial import of atom-feed
+
