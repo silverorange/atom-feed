@@ -31,7 +31,7 @@ class AtomFeed
 	 *
 	 * @ var string
 	 */
-	public $xml_encoding = 'UTF-8';
+	public $xml_encoding = 'utf-8';
 
 	/**
 	 * Title
@@ -78,7 +78,7 @@ class AtomFeed
 	/**
 	 * Link
 	 *
-	 * @var AtomFeedLink 
+	 * @var AtomFeedLink
 	 */
 	public $link = null;
 
@@ -86,17 +86,23 @@ class AtomFeed
 	// {{{ protected properties
 
 	/**
-	 * Array of feed entries 
+	 * Array of feed entries
+	 *
+	 * @see AtomFeed::addEntry()
 	 */
 	protected $entries = array();
 
 	/**
 	 * Authors
+	 *
+	 * @see AtomFeed::addAuthor()
 	 */
 	protected $authors = array();
 
 	/**
 	 * Array of name spaces
+	 *
+	 * @see AtomFeed::addNameSpace()
 	 */
 	protected $name_spaces = array();
 
@@ -104,7 +110,7 @@ class AtomFeed
 	// {{{ public function __construct()
 
 	/**
-	 * Creates a new Atom feed 
+	 * Creates a new Atom feed
 	 */
 	public function __construct()
 	{
@@ -204,7 +210,7 @@ class AtomFeed
 	 */
 	public static function getTextNode($document, $name, $value, $name_space = null)
 	{
-		$value = str_replace('<', '&lt;', $value);
+		$value = htmlspecialchars($value);
 
 		if ($name_space !== null)
 			$name = $name_space.':'.$name;
@@ -212,6 +218,24 @@ class AtomFeed
 		$child = $document->createElement($name);
 		$text_node = $document->createTextNode($value);
 		$child->appendChild($text_node);
+
+		return $child;
+	}
+
+	// }}}
+	// {{{ public static function getCDATANode()
+
+	/**
+	 * Gets a CDATA node
+	 */
+	public static function getCDATANode($document, $name, $value, $name_space = null)
+	{
+		if ($name_space !== null)
+			$name = $name_space.':'.$name;
+
+		$child = $document->createElement($name);
+		$cdata_node = $document->createCDATASection($value);
+		$child->appendChild($cdata_node);
 
 		return $child;
 	}
@@ -230,7 +254,7 @@ class AtomFeed
 		if ($date === null || !$date instanceof Date)
 			throw new PEAR_Exception(sprintf('%s is not a Date', $name));
 
-		return self::getTextNode($document, 
+		return self::getTextNode($document,
 			$name,
 			$date->getDate(DATE_FORMAT_ISO_EXTENDED));
 	}
