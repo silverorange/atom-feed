@@ -94,7 +94,7 @@ class AtomFeedEntry extends AtomFeedNode
 			$this->updated));
 
 		if ($this->summary !== null)
-			$entry->appendChild(AtomFeed::getTextNode($document,
+			$entry->appendChild(AtomFeed::getCDATANode($document,
 				'summary', $this->summary));
 
 		if ($this->link !== null)
@@ -112,7 +112,7 @@ class AtomFeedEntry extends AtomFeedNode
 			$entry->appendChild($author->getNode($document));
 
 		if ($this->content !== null)
-			$entry->appendChild(AtomFeed::getTextNode($document,
+			$entry->appendChild(AtomFeed::getCDATANode($document,
 				'content', $this->content));
 
 		return $entry;
