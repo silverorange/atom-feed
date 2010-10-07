@@ -46,7 +46,7 @@ $package->addMaintainer('lead', 'nrf', 'Nathan Fredrickson', 'nrf@silverorange.c
 
 $package->setPhpDep('5.1.5');
 $package->setPearinstallerDep('1.4.0');
-$package->addPackageDepWithChannel('required', 'Date', 'pear.php.net', '1.5.0a1');
+$package->addPackageDepWithChannel('required', 'HotDate', 'pear.silverorange.com', '0.0.1');
 $package->generateContents();
 
 

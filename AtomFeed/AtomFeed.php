@@ -5,7 +5,7 @@ require_once 'AtomFeedLink.php';
 require_once 'AtomFeedEntry.php';
 
 require_once 'PEAR/Exception.php';
-require_once 'Date.php';
+require_once 'HotDate/HotDate.php';
 
 /**
  * A class for constructing Atom feeds
@@ -71,7 +71,7 @@ class AtomFeed
 	/**
 	 * Updated
 	 *
-	 * @var Date
+	 * @var HotDate
 	 */
 	public $updated = null;
 
@@ -251,12 +251,12 @@ class AtomFeed
 		if ($name_space !== null)
 			$name = $name_space.':'.$name;
 
-		if ($date === null || !$date instanceof Date)
-			throw new PEAR_Exception(sprintf('%s is not a Date', $name));
+		if ($date === null || !$date instanceof HotDate)
+			throw new PEAR_Exception(sprintf('%s is not a HotDate', $name));
 
 		return self::getTextNode($document,
 			$name,
-			$date->getDate(DATE_FORMAT_ISO_EXTENDED));
+			$date->getISO8601());
 	}
 
 	// }}}
