@@ -246,17 +246,14 @@ class AtomFeed
 	/**
 	 * Get date node
 	 */
-	public static function getDateNode($document, $name, $date, $name_space = null)
+	public static function getDateNode($document, $name, HotDate $date,
+		$name_space = null)
 	{
-		if ($name_space !== null)
+		if ($name_space !== null) {
 			$name = $name_space.':'.$name;
+		}
 
-		if ($date === null || !$date instanceof HotDate)
-			throw new PEAR_Exception(sprintf('%s is not a HotDate', $name));
-
-		return self::getTextNode($document,
-			$name,
-			$date->getISO8601());
+		return self::getTextNode($document, $name, $date->format('c'));
 	}
 
 	// }}}
