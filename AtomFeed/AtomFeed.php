@@ -5,7 +5,7 @@ require_once 'AtomFeedLink.php';
 require_once 'AtomFeedEntry.php';
 
 require_once 'PEAR/Exception.php';
-require_once 'HotDate/HotDate.php';
+require_once 'HotDate/HotDateTime.php';
 
 /**
  * A class for constructing Atom feeds
