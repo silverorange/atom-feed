@@ -5,13 +5,12 @@ require_once 'AtomFeedLink.php';
 require_once 'AtomFeedEntry.php';
 
 require_once 'PEAR/Exception.php';
-require_once 'HotDate/HotDateTime.php';
 
 /**
  * A class for constructing Atom feeds
  *
  * @package   AtomFeed
- * @copyright 2005-2006 silverorange
+ * @copyright 2005-2013 silverorange
  * @license   http://www.gnu.org/copyleft/lesser.html LGPL License 2.1
  */
 class AtomFeed
@@ -71,7 +70,7 @@ class AtomFeed
 	/**
 	 * Updated
 	 *
-	 * @var HotDate
+	 * @var DateTime
 	 */
 	public $updated = null;
 
@@ -246,7 +245,7 @@ class AtomFeed
 	/**
 	 * Get date node
 	 */
-	public static function getDateNode($document, $name, HotDateTime $date,
+	public static function getDateNode($document, $name, DateTime $date,
 		$name_space = null)
 	{
 		if ($name_space !== null) {
