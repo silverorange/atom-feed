@@ -6,7 +6,7 @@ require_once 'AtomFeedNode.php';
  * Atom feed entry
  *
  * @package   AtomFeed
- * @copyright 2005-2006 silverorange
+ * @copyright 2005-2016 silverorange
  * @license   http://www.gnu.org/copyleft/lesser.html LGPL License 2.1
  */
 class AtomFeedEntry extends AtomFeedNode
