@@ -10,7 +10,7 @@ require_once 'PEAR/Exception.php';
  * A class for constructing Atom feeds
  *
  * @package   AtomFeed
- * @copyright 2005-2013 silverorange
+ * @copyright 2005-2016 silverorange
  * @license   http://www.gnu.org/copyleft/lesser.html LGPL License 2.1
  */
 class AtomFeed
