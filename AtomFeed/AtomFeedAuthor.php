@@ -1,7 +1,5 @@
 <?php
 
-require_once 'AtomFeedPerson.php';
-
 /**
  * Class for an Atom feed author
  *

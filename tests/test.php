@@ -1,15 +1,6 @@
 <?php
 
-ini_set('include_path', '.:/so/sites/veseys2/pear/lib:/usr/share/zend/library');
-
-@include_once 'PackageConfig.php';
-if (class_exists('PackageConfig')) {
-	PackageConfig::addPath('/so/packages/pear/pear/Date');
-}
-
-
-require_once '../AtomFeed/AtomFeed.php';
-require_once 'Date.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 $feed = new AtomFeed();
 $feed->title = 'My test feed';
