@@ -86,7 +86,6 @@ class AtomFeedLink extends AtomFeedNode
 		if ($this->length !== null)
 			$link->setAttribute('length', $this->length);
 
-
 		return $link;
 	}
 
