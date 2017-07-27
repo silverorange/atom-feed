@@ -157,7 +157,7 @@ class AtomFeed
 	public function display()
 	{
 		// create a new XML document
-		$document = new DomDocument('1.0', $this->xml_encoding);
+		$document = new DOMDocument('1.0', $this->xml_encoding);
 
 		// create feed node
 		$feed = $document->createElement('feed');
