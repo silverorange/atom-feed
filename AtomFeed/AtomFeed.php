@@ -245,9 +245,12 @@ class AtomFeed
 	/**
 	 * Get date node
 	 */
-	public static function getDateNode($document, $name, DateTime $date,
-		$name_space = null)
-	{
+	public static function getDateNode(
+		$document,
+		$name,
+		DateTime $date,
+		$name_space = null
+	) {
 		if ($name_space !== null) {
 			$name = $name_space.':'.$name;
 		}
