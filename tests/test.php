@@ -2,6 +2,8 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+header("Content-type: text/xml");
+
 $feed = new AtomFeed();
 $feed->title = 'My test feed';
 $feed->addNameSpace('g', 'http://base.google.com/ns/1.0');
@@ -18,5 +20,4 @@ for ($i = 0; $i <= 10; $i++) {
 
 $feed->display();
 
-header("Content-type: text/xml");
 ?>
