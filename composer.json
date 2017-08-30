@@ -29,8 +29,5 @@
 	},
 	"autoload": {
 		"classmap": [ "AtomFeed/" ]
-	},
-	"include-path": [
-		"./"
-	]
+	}
 }

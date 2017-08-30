@@ -1,7 +1,5 @@
 <?php
 
-require_once 'AtomFeedNode.php';
-
 /**
  * Abstract class for an Atom feed person
  *

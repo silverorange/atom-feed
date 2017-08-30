@@ -1,7 +1,5 @@
 <?php
 
-require_once 'AtomFeedNode.php';
-
 /**
  * Atom feed entry
  *
